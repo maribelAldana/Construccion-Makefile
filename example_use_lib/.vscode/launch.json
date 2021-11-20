@@ -6,13 +6,13 @@
     "configurations": [
 
         {
-            "name": "Cliente",
+            "name": "Ejemplo",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "program": "${workspaceFolder}/example_use_lib",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/example_lib",
+            "cwd": "${workspaceFolder}/example_use_lib",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",

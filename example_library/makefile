@@ -5,7 +5,7 @@ CC=gcc
 CFLAGS=-I$(IDIR)
 
 ODIR=./obj
-SRCDIR =./src
+SRCDIR =src
 LIBS=-lcommons -lpthread -lreadline -lcunit -lrt
 
 #SHARED_SRCDIR = ../shared/src
@@ -30,8 +30,8 @@ OBJ = $(patsubst $(SRCDIR)/%.c,$(ODIR)/%.o,$(SRC))
 $(PROCESS_NAME):
 	cd $(SRCDIR) && \
 	$(CC) -c -Wall -Werror $(CFLAGS) -fpic calculadora.c && \
-	$(CC) -shared ../obj/calculadora.o -o ../obj/calculadora.so && \
-	rm -f ./*.o
+	$(CC) -shared ./obj/calculadora.o -o ./obj/calculadora.so && \
+	rm -f ./obj/*.o
 
 #ar rcs $(IDIR)/libcalculadora.a $(ODIR)/*.o
 

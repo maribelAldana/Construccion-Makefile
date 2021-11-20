@@ -1,5 +1,5 @@
 PROCESS_NAME=example_use
-IDIR =./include
+IDIR =../example_use_lib/include
 IDIRLIB=../example_library/src
 CC=gcc
 CFLAGS=-g3 -Wall -L../example_library/src -I$(IDIR) 
@@ -17,9 +17,9 @@ OBJ = $(patsubst $(SRCDIR)/%.c,$(ODIR)/%.o,$(SRC))
 #	$(CC) -c -o $@ $< $(CFLAGS)
 
 build:
-	cd $(IDIRLIB) && \
+	cd /example_library/src && \
 	$(CC) -c -Wall -Werror -I../include -fpic calculadora.c && \
-	$(CC) -shared ../obj/calculadora.o -o ../obj/calculadora.so && \
+	$(CC) -shared ../calculadora.o -o ../obj/calculadora.so && \
 	rm -f ./*.o
 
 
